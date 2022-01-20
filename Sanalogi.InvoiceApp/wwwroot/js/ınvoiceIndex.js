@@ -1,18 +1,18 @@
 ﻿//DATE-PICKER CONFIG START HERE
 $(function () {
     $("#date").datepicker({
-        closeText: "kapat",
-        prevText: "&#x3C;geri",
-        nextText: "ileri&#x3e",
-        currentText: "bugün",
-        monthNames: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
-            "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
-        monthNamesShort: ["Oca", "Şub", "Mar", "Nis", "May", "Haz",
-            "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"],
-        dayNames: ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"],
-        dayNamesShort: ["Pz", "Pt", "Sa", "Ça", "Pe", "Cu", "Ct"],
-        dayNamesMin: ["Pz", "Pt", "Sa", "Ça", "Pe", "Cu", "Ct"],
-        weekHeader: "Hf",
+        //closeText: "kapat",
+        //prevText: "&#x3C;geri",
+        //nextText: "ileri&#x3e",
+        //currentText: "bugün",
+        //monthNames: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+        //    "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+        //monthNamesShort: ["Oca", "Şub", "Mar", "Nis", "May", "Haz",
+        //    "Tem", "Ağu", "Eyl", "Eki", "Kas", "Ara"],
+        //dayNames: ["Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi"],
+        //dayNamesShort: ["Pz", "Pt", "Sa", "Ça", "Pe", "Cu", "Ct"],
+        //dayNamesMin: ["Pz", "Pt", "Sa", "Ça", "Pe", "Cu", "Ct"],
+        //weekHeader: "Hf",
         dateFormat: "dd.mm.yy",
         firstDay: 1,
         isRTL: false,
@@ -41,17 +41,11 @@ function clearItem() {
 // ADD PRODUCTS TO TABLE START HERE
 $('#btn-product-add').click(function (e) {
     e.preventDefault()
-    /*let totalPrice = Number($('#total-price').val())*/
     if ($.trim($("#product-name").val()) == "" || $.trim($("#product-price").val()) == "") return alert('Ürün Adı veya Fiyatı Boş Bırakılamaz') //if values are empty dont save
 
     let productName = $('#product-name').val()
     let price = $('#product-price').val()
     let detailsTable = $('#details tbody')
-
-    //totalPrice += Number(price)
-    //$('#total-price').val(Number(totalPrice))
-
-
 
     let tableItems = '<tr><td>' + productName + '</td><td>' + price + '</td><td><a data-itemId="0" href="#" class="btn btn-danger btn-sm deleteItem"><span class="fas fa-trash" ></span></a></td></tr>'
     detailsTable.append(tableItems)
@@ -161,10 +155,3 @@ function saveInvoice(data) {
 
 //SEND DATA END HERE
 
-//let tableRow = ``
-//for (var i = 0; i < result.invoiceDetails; i++) {
-//    tableRow += `<tr> <td> ${result.invoiceDetails[i].productName}</td>
-//                                     <td> ${result.invoiceDetails[i].price}</td> </tr>`
-//}
-//console.log(tableRow)
-//$('#report-table tbody').append(tableRow)
