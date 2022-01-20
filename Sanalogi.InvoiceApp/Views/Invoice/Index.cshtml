@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+
+@*Adding Invoice Information Section - START*@
+<section id="invoice-section">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="text-center"> <span class="fas fa-plus"></span>  New Invoice Registration </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group mb-3">
+                            <label><span class="fas fa-clock"></span> Pick a Date</label>
+                            <input id="date" class="form-control" />
+                        </div>
+                        <div class="form-group form-row">
+                            <div class="col-12 mt-2">
+                                <button id="btn-product-add" class="btn btn-success btn-sm float-lg-right"><span class="fas fa-plus"></span> Add To List</button>
+                            </div>
+                            <div class="col-6">
+                                <label><span class="fas fa-archive"></span> Product Name</label>
+                                <input type="text" id="product-name" class="form-control" />
+                            </div>
+                            <div class="col-6">
+                                <label><span class="fas fa-euro-sign"></span> Product Price</label>
+                                <input type="number" id="product-price" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-2">
+        <div class="card">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h6><span class="fas fa-list"></span> Product List </h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <table id="details" class="table table-hover table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th>Product Price</th>
+                                        <th>Remove</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <div class="card-footer form-group d-flex justify-content-between align-items-center ">
+                            <span class="fas fa-money-check-alt mr-1"></span> <span class="mr-2">TOTAL:</span>
+                            <input disabled class="form-control text-dark" id="total-price" />
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="btnSave" class="btn btn-primary w-100"><span class="fas fa-save"></span> Save All</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@*Adding Invoice Information Section - END*@
+
+<br />
+
+@*This will displayed after adding Invoice Datas - START*@
+<div id="report-div" class="container">
+    <h4 class="text-center"> <strong>Your Invoice Details</strong></h4>
+    <table id="report-table" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <td> Number: <span id="number-span"></span> </td>
+                <td> Date: <span id="date-span"></span> </td>
+                <td> Total Price: <span class="badge badge-success" id="price-span"></span> </td>
+            </tr>
+        </thead>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Product Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div id="alert" class="alert alert-danger text-center" role="alert">
+        There is no 'Invoice Data' her for now
+    </div>
+</div>
+@*This will displayed after adding Invoice Datas - END*@
+
+@section Scripts{
+    <script src="~/js/ınvoiceIndex.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script>
+        $(document).ready(() => {
+            $('#report-div').hide()
+        })
+    </script>
+}
+
