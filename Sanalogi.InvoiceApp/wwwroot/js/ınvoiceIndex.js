@@ -140,7 +140,6 @@ function saveInvoice(data) {
                                     <td> ${value.productName} </td>
                                     <td> ${value.price} $</td> </tr>`
             })
-            $('#alert').fadeOut(1000)
             $('#invoice-section').fadeOut(1000)
             $('#report-table tbody').html(tableRow)
             $('#report-div').fadeIn(1000)
