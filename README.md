@@ -1,6 +1,6 @@
 # Sanalogi.InvoiceApp
 
---> Now you can see form is empty. You can add Invoice Datas while using this form.
+--> Now you can see form is empty. You can add Invoice Datas with using this form.
 
 ![InvoiceApp Empty](https://user-images.githubusercontent.com/81426353/150440337-dfad4bbf-ef62-483f-87e5-1db8ebb0061e.JPG)
 
