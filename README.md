@@ -11,6 +11,6 @@ After adding the products, you can send the data to the backend by pressing the 
 
 ![Invoice App](https://user-images.githubusercontent.com/81426353/150440354-610fdfb3-280e-4a8f-8b18-24c74ee6847a.JPG)
 
--->After saving data, form will be hide and this table will displayed. You will se ur datas in the table like that.
+-->After saving data, form will be hide and this table will displayed. You will se your datas in the table like that.
 
 ![Invoice App Details](https://user-images.githubusercontent.com/81426353/150440361-7d446b10-4402-46fd-99ec-7974c9b5636c.JPG)
