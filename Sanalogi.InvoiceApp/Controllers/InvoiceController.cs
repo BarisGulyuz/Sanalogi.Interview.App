@@ -39,11 +39,11 @@ namespace Sanalogi.InvoiceApp.Controllers
                 invoiceDetailId++;
             }
 
-            var invoices = Invoices.ToList();
-            var invoicesDetails = InvoiceDetails.ToList();
+            var invoice = Invoices.FirstOrDefault(x => x.Id == invoiceId);
+            var invoicesDetails = InvoiceDetails.Where(x => x.InvoiceId == invoiceId).ToList();
             return Json(new InvoiceDetailsVM
             {
-                Invoices = invoices,
+                Invoice = invoice,
                 InvoiceDetails = invoicesDetails
             });
 

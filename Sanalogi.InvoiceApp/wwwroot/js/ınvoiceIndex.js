@@ -130,10 +130,10 @@ function saveInvoice(data) {
         url: '/Invoice/Add',
         data: { date: data.date, totalPrice: data.totalPrice, ınvoiceDetail: data.ınvoiceDetail },
         success: function (result) {
-
-            $('#number-span').text(result.invoices[0].id)
-            $('#date-span').text(Date(result.invoices[0].date))
-            $('#price-span').text(result.invoices[0].totalPrice)
+            console.log(result)
+            $('#number-span').text(result.invoice.id)
+            $('#date-span').text(Date(result.invoice.date))
+            $('#price-span').text(result.invoice.totalPrice)
             let tableRow = ``
             $.each(result.invoiceDetails, (key, value) => {
                 tableRow += `<tr>   <td> ${value.id} </td>

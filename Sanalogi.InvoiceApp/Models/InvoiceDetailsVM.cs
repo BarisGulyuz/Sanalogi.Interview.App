@@ -7,7 +7,7 @@ namespace Sanalogi.InvoiceApp.Models
 {
     public class InvoiceDetailsVM
     {
-        public List<Invoice> Invoices { get; set; }
+        public Invoice Invoice { get; set; }
         public List<InvoiceDetail> InvoiceDetails { get; set; }
     }
 }
