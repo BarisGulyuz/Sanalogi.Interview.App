@@ -57,6 +57,7 @@ $('#btn-product-add').click(function (e) {
 })
 // ADD PRODUCTS TO TABLE END HERE
 
+//CALC TOTALPRICE START HERE
 function CalcTotalPrice() {
 
     let priceArr = []
@@ -64,7 +65,7 @@ function CalcTotalPrice() {
 
     $.each($('#details tbody tr'), function () {
         priceArr.push({
-            Price: Number($(this).find('td:eq(1)').html()),
+            Price: Number($(this).find('td:eq(1)').html())
         })
     })
     let totalPrice = 0
@@ -74,6 +75,7 @@ function CalcTotalPrice() {
     $('#total-price').val(Number(totalPrice))
 
 }
+//CALC TOTALPRICE END HERE
 
 //CLEARITEM FROM TABLE START HERE
 
@@ -83,7 +85,6 @@ $(document).on('click', 'a.deleteItem', function (e) {
     if ($(this).attr('data-itemId') == "0") {
 
         $(this).parents('tr').css("background-color", "#ff6347").fadeOut(800, function () {
-
             $(this).remove();
             CalcTotalPrice()
         });
@@ -110,9 +111,7 @@ $('#btnSave').click(function (e) {
 
     let data = {
         date: $("#date").val(),
-
         totalPrice: $("#total-price").val(),
-
         ınvoiceDetail: invoiceDetails
     }
 
@@ -131,6 +130,7 @@ function saveInvoice(data) {
         url: '/Invoice/Add',
         data: { date: data.date, totalPrice: data.totalPrice, ınvoiceDetail: data.ınvoiceDetail },
         success: function (result) {
+
             $('#number-span').text(result.invoices[0].id)
             $('#date-span').text(Date(result.invoices[0].date))
             $('#price-span').text(result.invoices[0].totalPrice)
@@ -148,7 +148,7 @@ function saveInvoice(data) {
         },
         error: function () {
 
-            alert("error!")
+            alert("Somethings Wrong!")
         }
     })
 }
