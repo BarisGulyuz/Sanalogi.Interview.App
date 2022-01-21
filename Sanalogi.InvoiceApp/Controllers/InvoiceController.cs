@@ -38,7 +38,7 @@ namespace Sanalogi.InvoiceApp.Controllers
                 });
                 invoiceDetailId++;
             }
-            invoiceId++;
+
             var invoices = Invoices.ToList();
             var invoicesDetails = InvoiceDetails.ToList();
             return Json(new InvoiceDetailsVM
